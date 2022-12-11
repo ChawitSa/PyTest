@@ -1,8 +1,8 @@
 def amount(a,b):
-    if isinstance(a, str):
-        return "Input Num1 again.."
-    if isinstance(b,str):
-        return "Input Num2 again.."
+    if not validate_input(a):
+        return display_error(a)
+    if not validate_input(b):
+        return display_error(b)
     return a+b
 
 def display_error(index):
@@ -12,3 +12,6 @@ def validate_input(num):
     if isinstance(num, str):
         return False
     return True
+
+import tensorflow as tf
+tf.config.list_physical_devices('GPU')

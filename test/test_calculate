@@ -49,14 +49,14 @@ def test_true_decimal5_1_sum_two_number():
 def test_fail_number01_sum_two_number():
     input01 = ""
     input02 = 8
-    expected_result = "Input Num1 again.."
+    expected_result = "Input "+str(input01)+" again.."
     actual_result = amount(input01, input02)
     assert expected_result == actual_result
 
 def test_fail_number02_sum_two_number():
     input01 = 8
     input02 = ""
-    expected_result = "Input Num2 again.."
+    expected_result = "Input "+str(input02)+" again.."
     actual_result = amount(input01, input02)
     assert expected_result == actual_result
 
