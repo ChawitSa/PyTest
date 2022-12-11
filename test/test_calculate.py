@@ -1,0 +1,85 @@
+import sys
+sys.path.insert(0, './function')
+
+from calculate import amount, validate_input, display_error
+import pytest
+
+def test_true4_sum_two_number():
+    input01 = 1
+    input02 = 3
+    expected_result = 4
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_true5_sum_two_number():
+    input01 = 2
+    input02 = 3
+    expected_result = 5
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_true_negative1_sum_two_number():
+    input01 = 2
+    input02 = -3
+    expected_result = -1
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_true_negative5_sum_two_number():
+    input01 = -2
+    input02 = -3
+    expected_result = -5
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_true_decimal0_6_sum_two_number():
+    input01 = 0.5
+    input02 = 0.1
+    expected_result = 0.6
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_true_decimal5_1_sum_two_number():
+    input01 = 5
+    input02 = 0.1
+    expected_result = 5.1
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_fail_number01_sum_two_number():
+    input01 = ""
+    input02 = 8
+    expected_result = "Input Num1 again.."
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_fail_number02_sum_two_number():
+    input01 = 8
+    input02 = ""
+    expected_result = "Input Num2 again.."
+    actual_result = amount(input01, input02)
+    assert expected_result == actual_result
+
+def test_false_validate_input_string():
+    input = ""
+    expected_result = False
+    actual_result = validate_input(input)
+    assert expected_result == actual_result
+
+def test_true_validate_input_number():
+    input = 1
+    expected_result = True
+    actual_result = validate_input(input)
+    assert expected_result == actual_result
+
+def test_show_string_display_error_index1():
+    input = 1
+    expected_result = "Input "+str(input)+" again.."
+    actual_result = display_error(input)
+    assert expected_result == actual_result
+
+def test_show_string_display_error_index2():
+    input = 2
+    expected_result = "Input "+str(input)+" again.."
+    actual_result = display_error(input)
+    assert expected_result == actual_result
