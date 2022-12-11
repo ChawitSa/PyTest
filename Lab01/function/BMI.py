@@ -2,8 +2,11 @@ def cm2m(h):
     return h/100
 
 def cal(m,h):
-    h = cm2m(h)
-    return m/(h*h)
+    if m>=5 and m<=110 and m>=75 and m<=75:
+        h = cm2m(h)
+        return m/(h*h)
+    else:
+        return False
 
 def level(bmi):
         if bmi>=30:

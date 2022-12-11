@@ -18,6 +18,26 @@ import pytest
     (4,170,"mass under 5 [5,110]"),
     (111,170,"mass over 110 [5,110]")])
 
-def test_amount_two_input(m,h,exp_res):
+def test_level(m,h,exp_res):
     actual_result = over(m,h)
+    assert exp_res == actual_result
+
+@pytest.mark.parametrize('m,h,exp_res',
+    [(55,75,97.78),
+    (55,76,95.22),
+    (55,194,14.61),
+    (55,195,14.46),
+    (55,170,19.03),
+    (5,170,1.73),
+    (6,170,2.08),
+    (109,170,37.72),
+    (110,170,38.06),
+    (70,170,False),
+    (80,170,False),
+    (55,74,False),
+    (55,196,False),
+    (4,170,False),
+    (111,170,False)])
+def test_bmi(m,h):
+    actual_result = cal(m,h)
     assert exp_res == actual_result
