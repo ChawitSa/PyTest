@@ -12,6 +12,3 @@ def validate_input(num):
     if isinstance(num, str):
         return False
     return True
-
-import tensorflow as tf
-tf.config.list_physical_devices('GPU')
